@@ -5,7 +5,7 @@
   {{ errorf "affiliate shortcode requires 'name' parameter" }}
 {{ end }}
 {{ $data := .Site.Data.affiliates }}
-{{ $product := (where $data "name" $name) | first }}
+{{ $product := index (where $data 'name' $name) 0 }}
 {{ if not $product }}
   {{ errorf "Affiliate product '%s' not found in data/affiliates.yaml" $name }}
 {{ end }}
