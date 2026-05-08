@@ -1,0 +1,13 @@
+{{/* adsense-bottom.html */}}
+{{ if .Site.Params.adsenseClientId }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.adsenseClientId }}"
+     crossorigin="anonymous"></script>
+<!-- Bottom Rectangle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="{{ .Site.Params.adsenseClientId }}"
+     data-ad-slot="{{ .Site.Params.adsenseSlotBottom }}"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{{ end }}

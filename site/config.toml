@@ -1,0 +1,48 @@
+baseURL = "{{ env `HUGO_BASE_URL` | default \"http://localhost:1313\" }}"
+languageCode = "en-us"
+title = "AI Tools Income Stream"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+googleAnalytics = "" # optional
+
+[params]
+  description = "Reviews and guides for AI tools, productivity apps, and budget tech gear."
+  author = "Your Name"
+  keywords = ["AI tools", "productivity apps", "budget tech", "laptops", "office setup"]
+  dateFormat = "Jan 2, 2006"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  disableThemeToggle = false
+  defaultTheme = "auto" # light, dark, auto
+  ShowToc = true
+  TocOpen = false
+  UseLibraries = ["denominate", "split"] # for math
+
+  # Adsense
+  adsenseClientId = "{{ env `ADSENSE_CLIENT_ID` | default \"ca-pub-your-adsense-id\" }}"
+  adsenseSlotTop = "{{ env `ADSENSE_SLOT_TOP` | default \"1234567890\" }}"
+  adsenseSlotBottom = "{{ env `ADSENSE_SLOT_BOTTOM` | default \"0987654321\" }}"
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

@@ -1,0 +1,15 @@
+{{/* adsense-top.html */}}
+{{ if .Site.Params.adsenseClientId }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.adsenseClientId }}"
+     crossorigin="anonymous"></script>
+<!-- Top Leaderboard -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{ .Site.Params.adsenseClientId }}"
+     data-ad-slot="{{ .Site.Params.adsenseSlotTop }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{{ end }}

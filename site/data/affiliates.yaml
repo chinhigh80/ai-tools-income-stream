@@ -1,0 +1,27 @@
+# Affiliate product data for Hugo shortcode injection
+# Each entry can be referenced via the affiliate shortcode
+# Example Amazon Associates entries
+
+- name: "Logitech MX Master 3"
+  asin: "B07FKW5L3J"
+  tag: "YOUR_AMAZON_TAG" # replace with your Amazon Associates tag
+  link_template: "https://www.amazon.com/dp/{{asin}}?tag={{tag}}"
+  description: "Advanced wireless mouse for productivity."
+
+- name: "Anker PowerPort III Nano 20W"
+  asin: "B07ZPVVF9F"
+  tag: "YOUR_AMAZON_TAG"
+  link_template: "https://www.amazon.com/dp/{{asin}}?tag={{tag}}"
+  description: "Compact USB-C charger for laptops and phones."
+
+- name: "Microsoft Office 365 Personal"
+  asin: "B07FZ8S74R"
+  tag: "YOUR_AMAZON_TAG"
+  link_template: "https://www.amazon.com/dp/{{asin}}?tag={{tag}}"
+  description: "Subscription to Word, Excel, PowerPoint, and more."
+
+- name: "BenQ Eye-Care Monitor GL2480"
+  asin: "B0756YXHQ3"
+  tag: "YOUR_AMAZON_TAG"
+  link_template: "https://www.amazon.com/dp/{{asin}}?tag={{tag}}"
+  description: "24-inch IPS monitor with low blue light technology."

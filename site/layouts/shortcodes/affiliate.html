@@ -1,0 +1,20 @@
+{{/* affiliate.html shortcode */}}
+{{/* Usage: {{< affiliate name="Logitech MX Master 3" >}} */}}
+{{ $name := .Get "name" }}
+{{ if not $name }}
+  {{ errorf "affiliate shortcode requires 'name' parameter" }}
+{{ end }}
+{{ $data := .Site.Data.affiliates }}
+{{ $product := (where $data "name" $name) | first }}
+{{ if not $product }}
+  {{ errorf "Affiliate product '%s' not found in data/affiliates.yaml" $name }}
+{{ end }}
+{{ $url := printf $product.link_template $product.asin $product.tag }}
+<a href="{{ $url }}" target="_blank" rel="nofollow sponsored" class="affiliate-link">
+  <strong>{{ $product.name }}</strong><br/>
+  <small>{{ $product.description }}</small>
+</a>
+<!-- Disclosure -->
+<p class="affiliate-disclosure small text-muted">
+  As an Amazon Associate I earn from qualifying purchases.
+</p>

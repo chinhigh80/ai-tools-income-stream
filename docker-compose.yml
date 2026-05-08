@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  hugo:
+    build:
+      context: ./site
+      dockerfile: Dockerfile
+    ports:
+      - "1313:80"
+    environment:
+      - HUGO_BASE_URL=${HUGO_BASE_URL:-http://localhost:1313}
+    volumes:
+      - ./site:/src:cached  # for live reload during dev (optional)
+    restart: unless-stopped
+
+  microtool:
+    build:
+      context: ./microtool
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PAYSTACK_PUBLIC_KEY=${PAYSTACK_PUBLIC_KEY}
+      - PAYSTACK_SECRET_KEY=${PAYSTACK_SECRET_KEY}
+    volumes:
+      - ./microtool:/app:cached
+    restart: unless-stopped
+
+volumes:
+  site_data:
+  microtool_data:
